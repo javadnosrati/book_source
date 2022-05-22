@@ -1,0 +1,410 @@
+body {
+    direction: rtl;
+    font-family: tahoma;
+}
+
+#main {
+    width: 800px;
+    background-color: #e9e9e9;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+#main #register {
+    text-align: center;
+}
+
+#main #register input {
+    margin: 3px;
+    padding: 5px;
+    width: 400px;
+}
+
+#main #register input[type=submit] {
+    width: 100px;
+}
+
+#main h1 {
+    text-align: center;
+}
+
+#main .nav {
+    text-align: center;
+}
+
+#main .nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.admin-main .add-product input {
+    margin: 5px;
+    font-family: tahoma;
+    font-size: 15px;
+}
+
+.admin-main .add-product input[type=text] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.admin-main .add-product input[type=text]:focus {
+    border: 1px solid #000;
+
+}
+
+.admin-main .add-product textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    font-family: tahoma;
+    resize: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.admin-main .add-product textarea:focus {
+    border: 1px solid #000;
+
+}
+
+.admin-main .add-product input[type=submit] {
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+.admin-main .add-product input[type=submit]:hover {
+    background-color: #005900;
+    cursor: pointer;
+}
+
+.admin-main table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+}
+
+.admin-main th, td {
+    padding: 8px;
+}
+
+.admin-main tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.admin-main th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.admin-main a, #main a {
+    text-decoration: none;
+    color: #377bc7;
+}
+
+.admin-main a:hover, #main a:hover {
+    color: #000;
+}
+
+#container {
+    width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#container .header {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 3px;
+
+}
+
+#container .header h1 {
+    font-size: 30px;
+}
+
+#container .header h2 {
+    font-size: 13px;
+
+}
+
+#container .nav {
+    text-align: center;
+}
+
+#container .nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+#container .nav ul li a {
+    text-decoration: none;
+    color: #377bc7;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+}
+
+#container .nav ul li a:hover {
+    color: #ffffff;
+    background-color: #377bc7;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#container .content {
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 70%;
+    float: right;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#container .sidebar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 29%;
+    float: left;
+}
+
+#container .footer {
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+#container .footer p {
+    padding: 5px;
+}
+
+.content .product-item {
+    width: 45%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 5px;
+    margin: 5px;
+
+}
+
+.content .product-item .product-image img {
+    width: 100%;
+    height: 200px;
+}
+
+.content .product-item .product-name {
+    font-size: 19px;
+}
+
+.content .product-item .product-name a {
+    text-decoration: none;
+    color: #377bc7;
+}
+
+.content .product-item .product-name a:hover {
+    color: #000;
+}
+
+.content .product-item .product-price {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.content .product-item .product-desc {
+    float: left;
+    font-size: 13px;
+}
+
+.content .product-item .product-desc a {
+    color: #838383;
+}
+
+.content .product-item .product-desc a:hover {
+    color: #000;
+}
+
+.sidebar a {
+    color: #377bc7;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #000;
+}
+
+.product-page .product-image {
+    float: right;
+}
+
+.product-page .product-image img {
+    width: 300px;
+    padding-left: 5px;
+    height: 200px;
+}
+
+.product-page .product-name {
+    font-size: 25px;
+}
+
+.product-page .product-price {
+    font-size: 14px;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-page .add-to-cart {
+    background-color: green;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.product-page .add-to-cart:hover {
+    background-color: #005300;
+    cursor: pointer;
+}
+
+.comments {
+    text-align: center;
+}
+
+.comments .comment-item {
+    text-align: right;
+}
+
+.comments .comment-item .username {
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.comments .comment-item .comment-text {
+    font-size: 14px;
+    padding: 5px 5px 0 0;
+}
+
+.comments input[type=text] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    font-family: Tahoma;
+}
+
+.comments textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    font-family: tahoma;
+    resize: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.comments input[type=submit] {
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-family: Tahoma;
+}
+
+.comments input[type=submit]:hover {
+    background-color: #006d00;
+    cursor: pointer;
+}
+
+.admin-comments .comment-item {
+    text-align: right;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.admin-comments .comment-item .user-data {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.admin-comments .comment-item .comment-text {
+    padding: 10px;
+}
+
+.admin-comments .comment-item .button {
+    float: left;
+}
+
+.admin-comments .comment-item .button .confirm {
+    background-color: green;
+    color: #fff !important;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.admin-comments .comment-item .button .confirm:hover {
+    background-color: #006d00;
+
+}
+
+.admin-comments .comment-item .button .delete {
+    background-color: #931717;
+    color: #fff !important;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.admin-comments .comment-item .button .delete:hover {
+    background-color: #6f1212;
+
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.content input[type=submit] {
+    background: green;
+    width: 100%;
+    color: #fff;
+    padding: 10px;
+    font-family: tahoma;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content input[type=submit]:hover {
+    background: #006400;
+    cursor: pointer;
+}
+
+.admin-main li {
+    display: block !important;
+}
