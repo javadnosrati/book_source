@@ -30,7 +30,14 @@ $password = md5($password);
 $user = mysqli_query($db, "SELECT * FROM users WHERE email='{$email}' AND password='{$password}'");
 
 if (mysqli_num_rows($user) > 0) {
-    login($user->fetch_assoc());
+    $user = $user->fetch_assoc();
+    if ($user['is_admin']) {
+        login($user, true);
+        redirect('/admin/index.php');
+    } else {
+        login($user);
+        redirect('/index.php');
+    }
     echo 'شما با موفقیت وارد شدید' . "<a href='/users/profile.php'>نمایش پروفایل</a>";
 } else {
     echo 'کلمه عبور یا ایمیل شما صحیح نیست. یا ثبت نام نکرده‌اید.';

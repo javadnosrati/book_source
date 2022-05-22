@@ -27,10 +27,13 @@ if (!$db) {
  * was authenticated.
  * @param $user
  */
-function login($user)
+function login($user, $isAdmin)
 {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['is_logged_in'] = true;
+    if ($isAdmin) {
+        $_SESSION['user_logged_is_admin'] = true;
+    }
     $_SESSION['time_logged_in'] = time();
 }
 
@@ -42,6 +45,9 @@ function logout()
     unset($_SESSION['is_logged_in']);
     unset($_SESSION['user_id']);
     unset($_SESSION['time_logged_in']);
+    if (isset($_SESSION['user_logged_is_admin'])) {
+        unset($_SESSION['user_logged_is_admin']);
+    }
     session_destroy();
 }
 
@@ -52,6 +58,15 @@ function logout()
 function isUserLoggedIn()
 {
     if (!isset($_SESSION['user_id']) || !isset($_SESSION['is_logged_in'])) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function isUserLoggedInAdmin()
+{
+    if (!isset($_SESSION['user_id']) || !isset($_SESSION['is_logged_in']) || !isset($_SESSION['user_logged_is_admin'])) {
         return false;
     } else {
         return true;
@@ -72,7 +87,7 @@ function setFlash($key, $message)
 
 function getFlash($key)
 {
-    $message = (isset($_SESSION['message'][$key]))?$_SESSION['message'][$key]:[];
+    $message = (isset($_SESSION['message'][$key])) ? $_SESSION['message'][$key] : [];
     unset($_SESSION['message']);
     return $message;
 }

@@ -1,8 +1,11 @@
-<?php require_once '../config/config.php'; ?>
 <?php
-if (!isset($_SESSION['admin-login'])) {
-    header("Location: login.php");
+require_once '../config/autoload.php';
+if (!isUserLoggedIn() && !isUserLoggedInAdmin()) {
+    return redirect('/users/login.php');
 }
+/***
+ * @var $db
+ */
 
 $query = mysqli_query($db, "SELECT * FROM products");
 ?>
@@ -26,7 +29,7 @@ $query = mysqli_query($db, "SELECT * FROM products");
             <li><a href="users.php">لیست کاربران</a></li>
             <li><a href="comments.php">نظرات</a></li>
             <li><a href="orders.php">سفارش ها</a></li>
-            <li><a href="do-logout.php">خروج از بخش مدیریت</a></li>
+            <li><a href="/process/logout.php">خروج از بخش مدیریت</a></li>
         </ul>
         <hr>
         <div class="admin-main">
@@ -37,11 +40,12 @@ $query = mysqli_query($db, "SELECT * FROM products");
                         <th>قیمت محصول</th>
                         <th>ویرایش/حذف</th>
                     </tr>
-                    <?php while ($row = mysqli_fetch_array($query)) { ?>
+                    <?php while ($product = mysqli_fetch_array($query)) { ?>
                         <tr>
-                            <td><?php echo $row['product_name'] ?></td>
-                            <td><?php echo $row ['product_price']?></td>
-                            <td><a href="edit-product.php?id=<?php echo $row['id'] ?>">ویرایش</a> - <a href="delete-product.php?id=<?php echo $row['id'] ?>">حذف</a></td>
+                            <td><?php echo $product['product_name'] ?></td>
+                            <td><?php echo $product ['product_price'] ?></td>
+                            <td><a href="edit-product.php?id=<?php echo $product['id'] ?>">ویرایش</a> - <a
+                                        href="delete-product.php?id=<?php echo $product['id'] ?>">حذف</a></td>
                         </tr>
                     <?php } ?>
                 </table>

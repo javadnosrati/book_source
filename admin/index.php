@@ -1,9 +1,8 @@
-<?php require_once '../config/config.php'; ?>
 <?php
-if (!isset($_SESSION['admin-login'])) {
-    header("Location: login.php");
+require_once '../config/autoload.php';
+if (!isUserLoggedIn() && !isUserLoggedInAdmin()) {
+    return redirect('/users/login.php');
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,7 +24,7 @@ if (!isset($_SESSION['admin-login'])) {
             <li><a href="users.php">لیست کاربران</a></li>
             <li><a href="comments.php">نظرات</a></li>
             <li><a href="orders.php">سفارش ها</a></li>
-            <li><a href="do-logout.php">خروج از بخش مدیریت</a></li>
+            <li><a href="/process/logout.php">خروج از بخش مدیریت</a></li>
         </ul>
         <hr>
         <div class="admin-main">

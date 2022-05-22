@@ -1,5 +1,12 @@
 <?php
-require_once '../config/config.php';
+require_once '../config/autoload.php';
+if (!isUserLoggedIn() && !isUserLoggedInAdmin()) {
+    return redirect('/users/login.php');
+}
+/***
+ * @var $db
+ */
+
 $productId = $_GET['id'];
 $query = mysqli_query($db, "DELETE FROM products WHERE id=$productId");
 if($query){

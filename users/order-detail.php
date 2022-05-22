@@ -30,7 +30,7 @@ $getIds = explode(',', $productIds, -1);
         <ul>
             <li><a href="#">مشخصات شما</a></li>
             <li><a href="#">سفارش‌ها</a></li>
-            <li><a href="../config/do-logout.php">خروج</a></li>
+            <li><a href="/process/logout.php">خروج</a></li>
         </ul>
         <hr>
         <div class="admin-main">

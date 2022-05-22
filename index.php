@@ -1,4 +1,4 @@
-<?php require_once 'config/autoload.php';?>
+<?php require_once 'config/autoload.php'; ?>
 <?php
 /**
  * @var $db mysqli_connect
@@ -17,6 +17,11 @@ $query = mysqli_query($db, "SELECT * FROM products ORDER BY id DESC LIMIT 4 ");
 <body>
 
 <div id="container">
+    <?
+    foreach (getFlash('messages') as $flash) {
+        echo '<p>' . $flash . '<p/><br>';
+    }
+    ?>
     <div class="header">
         <h1>فروشگاه اینترنتی سورس شاپ</h1>
         <h2>منبع کتابهای آموزشی و درسی و غیره...</h2>
@@ -34,8 +39,10 @@ $query = mysqli_query($db, "SELECT * FROM products ORDER BY id DESC LIMIT 4 ");
 
         <?php while ($row = mysqli_fetch_array($query)) { ?>
             <div class="product-item">
-                <div class="product-image"><a href="product.php?id=<?php echo $row['id'] ?>"><img src="images/<?php echo $row['product_image'] ?>" alt=""></a></div>
-                <div class="product-name"><a href="product.php?id=<?php echo $row['id'] ?>"><?php echo $row['product_name'] ?></a></div>
+                <div class="product-image"><a href="product.php?id=<?php echo $row['id'] ?>"><img
+                                src="images/<?php echo $row['product_image'] ?>" alt=""></a></div>
+                <div class="product-name"><a
+                            href="product.php?id=<?php echo $row['id'] ?>"><?php echo $row['product_name'] ?></a></div>
                 <div class="product-price"><?php echo $row['product_price'] ?> تومان</div>
                 <div class="product-desc"><a href="product.php?id=<?php echo $row['id'] ?>">مشاهده ...</a></div>
             </div>
