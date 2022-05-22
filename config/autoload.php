@@ -47,8 +47,9 @@ function logout()
 
 /**
  * Return true if user is logged in.
+ * @return boolean
  */
- function isUserLoggedIn()
+function isUserLoggedIn()
 {
     if (!isset($_SESSION['user_id']) || !isset($_SESSION['is_logged_in'])) {
         return false;
@@ -56,4 +57,25 @@ function logout()
         return true;
     }
 }
+
+
+function redirect($url)
+{
+    header("Location: {$url}");
+}
+
+
+function setFlash($key, $message)
+{
+    $_SESSION['message'][$key][] = $message;
+}
+
+function getFlash($key)
+{
+    $message = (isset($_SESSION['message'][$key]))?$_SESSION['message'][$key]:[];
+    unset($_SESSION['message']);
+    return $message;
+}
+
+
 
