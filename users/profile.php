@@ -1,12 +1,14 @@
-<?php require_once '../config/config.php'; ?>
 <?php
-if (!isset($_SESSION['user-login'])) {
-    header("Location: login.php");
+require_once '../config/autoload.php';
+
+if (!isUserLoggedIn()) {
+    redirect('/users/login.php');
+    return die();
 }
 
-$email = $_SESSION['user-login'];
-$getUsername = mysqli_query($db, "SELECT * FROM users WHERE email='$email'");
-$username = mysqli_fetch_array($getUsername);
+$user_id = $_SESSION['user_id'];
+$userQuery = mysqli_query($db, "SELECT * FROM users WHERE id={$user_id}");
+$user = mysqli_fetch_array($userQuery);
 ?>
 
 <!doctype html>
@@ -25,14 +27,14 @@ $username = mysqli_fetch_array($getUsername);
         <ul>
             <li><a href="#">مشخصات شما</a></li>
             <li><a href="#">سفارش‌ها</a></li>
-            <li><a href="../config/do-logout.php">خروج</a></li>
+            <li><a href="/process/logout.php">خروج</a></li>
         </ul>
         <hr>
         <div class="admin-main">
             <ul>
-                <li>نام شما: <?php echo $username['display_name'] ?></li>
+                <li>نام شما: <?php echo $user['display_name'] ?></li>
                 <br>
-                <li>ایمیل شما: <?php echo $username['email'] ?></li>
+                <li>ایمیل شما: <?php echo $user['email'] ?></li>
             </ul>
         </div>
     </div>
