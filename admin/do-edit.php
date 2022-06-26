@@ -1,5 +1,5 @@
 <?php
-require_once '../config/config.php';
+require_once '../config/autoload.php';
 if (isset($_POST['edit-product'])) {
     $productId = $_POST['product-id'];
     $productName = $_POST['product-name'];

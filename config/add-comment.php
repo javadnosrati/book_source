@@ -1,6 +1,5 @@
 <?php
-require_once 'config.php';
-
+require_once 'autoload.php';
 if (isset($_POST['add-comment'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];

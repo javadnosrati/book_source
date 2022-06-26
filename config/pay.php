@@ -1,6 +1,5 @@
 <?php
-require_once 'config.php';
-
+require_once 'autoload.php';
 $userEmail = $_SESSION['user-login'];
 $prdouctIds = $_POST['product-ids'];
 $total = 0;
