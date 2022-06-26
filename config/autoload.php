@@ -27,7 +27,7 @@ if (!$db) {
  * was authenticated.
  * @param $user
  */
-function login($user, $isAdmin)
+function login($user, $isAdmin = false)
 {
     $_SESSION['user_id'] = $user['id'];
     $_SESSION['is_logged_in'] = true;
