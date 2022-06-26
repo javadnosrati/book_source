@@ -1,5 +1,4 @@
-<?php require_once 'config/config.php'; ?>
-<?php
+<?php require_once __DIR__.'/config/autoload.php';
 if (!isset($_SESSION['user-login'])) {
     header("Location: users/login.php");
 }
