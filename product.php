@@ -1,5 +1,4 @@
-<?php require_once 'config/config.php'; ?>
-<?php
+<?php require_once __DIR__.'/config/autoload.php'; 
 $id = $_GET['id'];
 $query = mysqli_query($db, "SELECT * FROM products WHERE id=$id");
 $comments = mysqli_query($db, "SELECT * FROM comments WHERE product_id='$id' AND is_confirm='1'");
